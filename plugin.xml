@@ -33,5 +33,15 @@
 		</config-file>
 		<source-file src="src/ios/Sms.m" />
 	</platform>
+	
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Sms">
+                <param name="wp-package" value="Sms" />
+            </feature>
+        </config-file>
+        
+        <source-file src="src/wp8/Sms.cs" />        
+    </platform>	
 
 </plugin>
