@@ -20,6 +20,10 @@
 	
 		<config-file parent="/*" target="AndroidManifest.xml" />
 		
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.SEND_SMS" />
+        </config-file>		
+		
 		<!-- Important change -->
 		<source-file src="src/android/Sms.java" 
 					 target-dir="src/com/jsmobile/plugins/sms" />
@@ -31,6 +35,8 @@
 				<param name="ios-package" value="Sms" />
 			</feature>
 		</config-file>
+		
+		<source-file src="src/ios/Sms.h" />		
 		<source-file src="src/ios/Sms.m" />
 	</platform>
 	
