@@ -4,7 +4,7 @@ This plugin allows you to send SMS message to a specific phone number for Androi
 
 
 	var messageInfo = {
-		phoneNumber: "+201066698446",
+		phoneNumber: "xxxxxxxxxx",
 		textMessage: "This is a test message"
 	};
 	
