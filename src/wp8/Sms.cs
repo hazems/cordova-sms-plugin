@@ -8,12 +8,22 @@ namespace WPCordovaClassLib.Cordova.Commands
 {
   public class Sms : BaseCommand
   {
-    public void coolMethod(string options)
+
+    public void sendMessage(string options)
     {
       string[] optValues = JsonHelper.Deserialize<string[]>(options);
-      String message = optValues[0];
-      
-	  DispatchCommandResult(new PluginResult(PluginResult.Status.OK, message));
+      String number = optValues[0];
+      String message = optValues[1];
+
+      SmsComposeTask sms = new SmsComposeTask();
+
+      sms.To = number;
+      sms.Body = message;
+
+      sms.Show();
+
+      //Since there is no way to track SMS application events in WP8, always send Ok status.
+      DispatchCommandResult(new PluginResult(PluginResult.Status.OK, "Success"));
     }
   }
 }
