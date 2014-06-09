@@ -31,8 +31,17 @@ or
 	cordova plugin add com.jsmobile.plugins.sms
 
 
+Important Note
+---
+For iOS and Windows Phone platforms, it is not possible to send SMS directly without opening the default device SMS application. This means that the API will only open and track the SMS application events (cancel, successful sending, un-successful sending, ...etc) in iOS platform. For Windows Phone 8, the plugin will only open the SMS application without tracking its events because tracking SMS application events is not currently applicable in Windows 8 platform.
+
+Used Resources
+---
+Special Thanks to [appcoda.com]() for helping me in implementing the iOS part of this plugin:
+
+[http://www.appcoda.com/ios-programming-send-sms-text-message/ ]()
+
 Licence
 ---
 It is Apache License, Version 2.0. Feel free to fork the project and send pull requests if you have any.
  
-
