@@ -2,12 +2,10 @@
 <plugin id="com.jsmobile.plugins.sms" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>sms</name>
     <description>A plugin for sending sms messages</description>
-    <license>Apache 2</license>
+    <license>Apache 2.0</license>
     <keywords>cordova,plugins,sms</keywords>    
 
     <js-module name="sms" src="www/sms.js">
-        
-        <!-- Important change -->
         <clobbers target="window.sms" />
     </js-module>
 
@@ -17,14 +15,11 @@
                 <param name="android-package" value="com.jsmobile.plugins.sms.Sms" />
             </feature>
         </config-file>
-    
-        <config-file parent="/*" target="AndroidManifest.xml" />
         
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.SEND_SMS" />
         </config-file>        
         
-        <!-- Important change -->
         <source-file src="src/android/Sms.java" 
                      target-dir="src/com/jsmobile/plugins/sms" />
     </platform>
