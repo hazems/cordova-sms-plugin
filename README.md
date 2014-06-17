@@ -37,7 +37,8 @@ For iOS and Windows Phone platforms, it is not possible to send SMS directly wit
 
 Test Client
 ---
-You can reach the test client of this plugin [https://github.com/hazems/cordova-sms-plugin-test/ ](https://github.com/hazems/cordova-sms-plugin-test/)
+You can reach the test client of this plugin here:
+ [https://github.com/hazems/cordova-sms-plugin-test/ ](https://github.com/hazems/cordova-sms-plugin-test/)
 
 Used Resources
 ---
