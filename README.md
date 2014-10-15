@@ -1,3 +1,9 @@
+Notice:
+====================
+This plugin is one of the examples of the ["JavaScript Mobile Application Development"](https://www.packtpub.com/web-development/javascript-native-mobile-apps-development) book which can be reached at: <br> 
+[http://www.amazon.com/JavaScript-Native-Mobile-Apps-Development/dp/1783554177/](http://www.amazon.com/JavaScript-Native-Mobile-Apps-Development/dp/1783554177/) <br>
+[https://www.packtpub.com/web-development/javascript-native-mobile-apps-development](http://www.amazon.com/JavaScript-Native-Mobile-Apps-Development/dp/1783554177/) 
+
 Sms Custom Cordova Plugin:
 ====================
 This plugin allows you to send SMS message to a specific phone number for Android, iOS and Windows Platform 8. Here is an example below:
