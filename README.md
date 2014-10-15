@@ -1,4 +1,4 @@
-Notice:
+Notice
 ====================
 This plugin is one of the examples of the ["JavaScript Mobile Application Development"](https://www.packtpub.com/web-development/javascript-native-mobile-apps-development) book which can be reached at: <br> 
 [http://www.amazon.com/JavaScript-Native-Mobile-Apps-Development/dp/1783554177/](http://www.amazon.com/JavaScript-Native-Mobile-Apps-Development/dp/1783554177/) <br>
