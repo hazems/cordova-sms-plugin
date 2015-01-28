@@ -14,7 +14,7 @@ smsExport.sendMessage = function(messageInfo, successCallback, errorCallback) {
     }
            
     var phoneNumber = messageInfo.phoneNumber;
-    var textMessage = messageInfo.textMessage || "Default Text from SMS plugin";
+    var textMessage = messageInfo.textMessage || "";
            
     if (! phoneNumber) {
         console.log("Missing Phone Number");
