@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.jsmobile.plugins.sms" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.jsmobile.plugins.sms" version="0.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>sms</name>
     <description>A plugin for sending sms messages</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,plugins,sms</keywords>    
+    <keywords>cordova,plugins,sms</keywords>
 
     <js-module name="sms" src="www/sms.js">
         <clobbers target="window.sms" />
@@ -15,12 +15,12 @@
                 <param name="android-package" value="com.jsmobile.plugins.sms.Sms" />
             </feature>
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.SEND_SMS" />
-        </config-file>        
-        
-        <source-file src="src/android/Sms.java" 
+        </config-file>
+
+        <source-file src="src/android/Sms.java"
                      target-dir="src/com/jsmobile/plugins/sms" />
     </platform>
 
@@ -30,21 +30,21 @@
                 <param name="ios-package" value="Sms" />
             </feature>
         </config-file>
-        
-        <source-file src="src/ios/Sms.h" />        
+
+        <source-file src="src/ios/Sms.h" />
         <source-file src="src/ios/Sms.m" />
-        
-        <framework src="MessageUI.framework" weak="true" />        
+
+        <framework src="MessageUI.framework" weak="true" />
     </platform>
-    
+
     <platform name="wp8">
         <config-file target="config.xml" parent="/*">
             <feature name="Sms">
                 <param name="wp-package" value="Sms" />
             </feature>
         </config-file>
-        
-        <source-file src="src/wp8/Sms.cs" />        
-    </platform>    
+
+        <source-file src="src/wp8/Sms.cs" />
+    </platform>
 
 </plugin>

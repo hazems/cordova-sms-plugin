@@ -28,13 +28,21 @@ As you notice you just need to call *sms.sendMessage(messageInfo, successCallbac
 
 Installing the plugin
 ---
-In order to install the plugin you can simply use the following Cordova CLI command: 
+In order to install the plugin you can:
+
+Install it from NPM registry as follows:
+
+	npm i hazems-cordova-plugin-sms
+
+ 
+or simply use the following Cordova CLI command: 
 	
 	cordova plugin add https://github.com/hazems/cordova-sms-plugin.git
 	
 or
 
 	cordova plugin add com.jsmobile.plugins.sms
+
 
 
 Important Note

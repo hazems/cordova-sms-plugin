@@ -1,0 +1,32 @@
+{
+  "name": "hazems-cordova-plugin-sms",
+  "version": "0.0.2",
+  "description": "A plugin for sending sms messages",
+  "cordova": {
+    "id": "com.jsmobile.plugins.sms",
+    "platforms": [
+      "android",
+      "ios",
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazems/cordova-sms-plugin.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugins",
+    "sms",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-wp8"
+  ],
+  "author": "Hazem Saleh",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/hazems/cordova-sms-plugin/issues"
+  },
+  "homepage": "https://github.com/hazems/cordova-sms-plugin#readme"
+}
