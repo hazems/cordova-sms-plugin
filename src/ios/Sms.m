@@ -6,36 +6,38 @@
 
 - (void)sendMessage:(CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult* pluginResult = nil;
-    NSString* phoneNumber = [command.arguments objectAtIndex:0];
-    NSString* textMessage = [command.arguments objectAtIndex:1];
-    
-    self.callbackID = command.callbackId;
-    
-    if (![MFMessageComposeViewController canSendText]) {
-        NSMutableDictionary* returnInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+    [self.commandDelegate runInBackground:^{
+        CDVPluginResult* pluginResult = nil;
+        NSString* phoneNumber = [command.arguments objectAtIndex:0];
+        NSString* textMessage = [command.arguments objectAtIndex:1];
         
-        [returnInfo setObject:@"SMS_FEATURE_NOT_SUPPORTED" forKey:@"code"];
-        [returnInfo setObject:@"SMS feature is not supported on this device" forKey:@"message"];
+        self.callbackID = command.callbackId;
         
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:returnInfo];
+        if (![MFMessageComposeViewController canSendText]) {
+            NSMutableDictionary* returnInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+            
+            [returnInfo setObject:@"SMS_FEATURE_NOT_SUPPORTED" forKey:@"code"];
+            [returnInfo setObject:@"SMS feature is not supported on this device" forKey:@"message"];
+            
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:returnInfo];
+            
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+            
+            return;
+        }
         
-        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        MFMessageComposeViewController *composeViewController = [[MFMessageComposeViewController alloc] init];
+        composeViewController.messageComposeDelegate = self;
         
-        return;
-    }
-    
-    MFMessageComposeViewController *composeViewController = [[MFMessageComposeViewController alloc] init];
-    composeViewController.messageComposeDelegate = self;
-    
-    NSMutableArray *recipients = [[NSMutableArray alloc] init];
-    
-    [recipients addObject:phoneNumber];
-    
-    [composeViewController setBody:textMessage];
-    [composeViewController setRecipients:recipients];
-    
-    [self.viewController presentViewController:composeViewController animated:YES completion:nil];
+        NSMutableArray *recipients = [[NSMutableArray alloc] init];
+        
+        [recipients addObject:phoneNumber];
+        
+        [composeViewController setBody:textMessage];
+        [composeViewController setRecipients:recipients];
+        
+        [self.viewController presentViewController:composeViewController animated:YES completion:nil];
+    }];
 }
 
 // Handle the different situations of MFMessageComposeViewControllerDelegate
