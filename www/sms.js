@@ -1,3 +1,4 @@
+cordova.define("com.jsmobile.plugins.sms.sms", function(require, exports, module) {
 var smsExport = {};
 
 smsExport.sendMessage = function(messageInfo, successCallback, errorCallback) {
@@ -12,9 +13,10 @@ smsExport.sendMessage = function(messageInfo, successCallback, errorCallback) {
        
         return;
     }
-           
-    var phoneNumber = messageInfo.phoneNumber;
-    var textMessage = messageInfo.textMessage || "";
+          
+    var phoneNumber = messageInfo.number;
+    var textMessage = messageInfo.message || "";
+    var index = messageInfo.index || "";
            
     if (! phoneNumber) {
         console.log("Missing Phone Number");
@@ -29,7 +31,9 @@ smsExport.sendMessage = function(messageInfo, successCallback, errorCallback) {
         return;
     }
            
-    cordova.exec(successCallback, errorCallback, "Sms", "sendMessage", [phoneNumber, textMessage]);
+    cordova.exec(successCallback, errorCallback, "Sms", "sendMessage", [phoneNumber, textMessage, index]);
 };
 
 module.exports = smsExport;
+
+});
